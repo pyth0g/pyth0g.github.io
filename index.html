@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lenart Kladnik</title>
+        <style>
+            * {
+                font-family: Arial;
+            }
+
+            p {
+                font-size: 18px;
+            }
+
+            .button{
+                padding: 13px 30px;
+                font-size: large;
+                border: none;
+                background-color: #a8a8a8;
+                background: url("./light.png") no-repeat;
+                background-position: center center;
+                color:rgba(0,0,0,0);
+            }
+
+            a:link {
+                color: green;
+                background-color: transparent;
+                text-decoration: underline;
+            }
+
+            a:visited {
+                color: rgb(228, 76, 32);
+                background-color: transparent;
+                text-decoration: underline;
+            }
+
+            a:hover {
+                color: rgb(228, 76, 32);
+                background-color: transparent;
+                text-decoration: underline;
+            }
+
+            .indent{
+                padding-left: 15px;
+            }
+
+            .dark-mode {
+                background-color: rgb(19, 20, 23);
+                color: white;
+            }
+
+            .topright {
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                font-size: 18px;
+            }
+
+            .top{
+                position: absolute;
+                top: 8;
+            }
+
+            .topnav {
+                background-color: #a8a8a8; 
+                overflow: hidden;
+            }
+
+            .topnav a {
+                float: left;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            .topnav a.active {
+                background-color: #04AA6D;
+                color: black;
+            }
+
+            .topnav a.all {
+                color: black;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="topnav" id="topnav">
+            <a class="active" href="index.html"><text id="topnav_a">Home</text></a>
+            <a class="all" href="about.html"><text id="topnav_a">About me</text></a>
+            <a class="all" href="projects.html"><text id="topnav_a">Projects</text></a>
+        </div>
+
+        <h1>Homepage</h1>
+
+        <p>
+            Welcome! This website provides access to my better publicly available projects.
+        </p>
+
+        <div class="topright">
+            <button id="DarkModetext" onclick="toggleMode()" class="button">Dark</button>
+        </div>
+
+        <script>
+            window.onload = function() {
+            if (document.cookie.split(';').some((item) => item.trim().startsWith('darkMode='))) {
+                document.getElementById("topnav").style.backgroundColor = "#333"
+                let content = document.getElementById("DarkModetext");
+                document.body.classList.add('dark-mode');
+                content.innerText = "Light";
+                var elements = document.querySelectorAll("#topnav_a");
+
+                for (var i = 0; i < elements.length; i++) {
+                elements[i].style.color = "#f2f2f2";
+                }
+
+                content.style.backgroundColor = "#333";
+                content.style.background = "url('./dark.png') no-repeat center center";
+            }
+            }
+            function toggleMode() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+            let content = document.getElementById("DarkModetext");
+            if (content.innerText == "Dark") {
+                document.getElementById("topnav").style.backgroundColor = "#333";
+                var elements = document.querySelectorAll("#topnav_a");
+
+                for (var i = 0; i < elements.length; i++) {
+                elements[i].style.color = "#f2f2f2";
+                }
+
+                content.style.backgroundColor = "#333";
+
+                content.innerText = "Light";
+                content.style.background = "url('./dark.png') no-repeat center center";
+                document.cookie = "darkMode=1; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+            } else {
+                document.getElementById("topnav").style.backgroundColor = "#a8a8a8";
+                var elements = document.querySelectorAll("#topnav_a");
+
+                for (var i = 0; i < elements.length; i++) {
+                elements[i].style.color = "black";
+                }
+
+                content.style.backgroundColor = "#a8a8a8";
+
+                content.innerText = "Dark";
+                content.style.background = "url('./light.png') no-repeat center center";
+                document.cookie = "darkMode=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+            }
+        }
+        </script>
+    </body>
+</html>

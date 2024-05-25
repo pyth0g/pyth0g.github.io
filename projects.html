@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lenart Kladnik - Projects</title>
+        <style>
+            * {
+                font-family: Arial;
+            }
+
+            #container {
+                background-color: #faf8f8;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                margin-top: 10px;
+                border: 2px solid gray;
+                border-radius: 8px;
+            }
+
+            .center {
+                text-align: center;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            li {
+                margin-bottom: 20px;
+            }
+
+            li a {
+                text-decoration: none;
+                color: #007bff;
+                font-weight: bold;
+            }
+
+            .description {
+                margin-top: 5px;
+                font-style: italic;
+                color: #555;
+            }
+
+            .button{
+                padding: 13px 30px;
+                font-size: large;
+                border: none;
+                background-color: #a8a8a8;
+                background: url("./light.png") no-repeat;
+                background-position: center center;
+                color:rgba(0,0,0,0);
+            }
+
+            a:link {
+                color: green;
+                background-color: transparent;
+                text-decoration: underline;
+            }
+
+            a:visited {
+                color: green;
+                background-color: transparent;
+                text-decoration: underline;
+            }
+
+            a:hover {
+                color: rgb(228, 76, 32);
+                background-color: transparent;
+                text-decoration: underline;
+            }
+
+            .indent {
+                padding-left: 15px;
+            }
+
+            .dark-mode {
+                background-color: rgb(19, 20, 23);
+                color: white;
+            }
+
+            .topright {
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                font-size: 18px;
+            }
+
+            .top{
+                position: absolute;
+                top: 8;
+            }
+
+            .topnav {
+                background-color: #e2e2e2; 
+                overflow: hidden;
+            }
+
+            .topnav a {
+                float: left;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            .topnav a.active {
+                background-color: #04AA6D;
+                color: black;
+            }
+
+            .topnav a.all {
+                color: black;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="topnav" id="topnav">
+            <a class="all" href="index.html"><text id="topnav_a">Home</text></a>
+            <a class="all" href="about.html"><text id="topnav_a">About me</text></a>
+            <a class="active" href="projects.html"><text id="topnav_a">Projects</text></a>
+        </div>
+
+        <h1>Projects</h1>
+
+        <div id="container">
+            <ul>
+                <li id="container">
+                    <a href="https://github.com/pyth0g/Python/tree/master/Python/BfScript" target="_blank">BfScript</a>:<br>
+                    <span>BfScript is a simple programming language that 'compiles' to BrainFuck.</span>
+                </li>
+        
+                <li id="container">
+                    <a href="https://github.com/pyth0g/Python/tree/master/Python/Brainfuck%20interpreter" target="_blank">Brainfuck Interpreter</a>:<br>
+                    <span>An interpreter for the BrainFuck programming language with a bunch of extra features.</span>
+                </li>
+        
+                <li id="container">
+                    <a href="https://github.com/pyth0g/Python/tree/master/Python/Chess" target="_blank">Chess</a>:<br>
+                    <span>A chess game for the terminal (requires a terminal that supports emoji).</span>
+                </li>
+        
+                <li id="container">
+                    <a href="https://github.com/pyth0g/Python/tree/master/Python/Uno" target="_blank">Uno</a>:<br>
+                    <span>An uno game for the terminal with a robot opponent (requires a terminal that supports emoji).</span>
+                </li>
+        
+                <li id="container">
+                    <a href="https://github.com/pyth0g/Python/tree/master/Python/Itt" target="_blank">Itt</a>:<br>
+                    <span>An image to ASCII art converter.</span>
+                </li>
+        
+                <li id="container">
+                    <a class="center" href="https://github.com/pyth0g/Python/tree/master/Python/LSB%20Algorithm" target="_blank">LSB Algorithm</a>:<br>
+                    <span>An encoder that uses the least significant bit algorithm to modify the last bit of every pixel's RGB values in the image to match an inputted message.</span>
+                </li>
+
+                <li id="container">
+                    <a href="https://github.com/pyth0g/DuckyScript-Compiler" target="_blank">DuckyScript Compiler</a>:<br>
+                    <span>A simple compiler that compiles DuckyScript to c++.</span>
+                </li>
+            </ul>
+        
+            <p><b>You can find more projects on my GitHub <a href="https://github.com/pyth0g" target="_blank">here</a>.</b></p>
+        </div>
+
+        <div class="topright">
+            <button id="DarkModetext" onclick="toggleMode()" class="button">Dark</button>
+        </div>
+
+        <script>
+            window.onload = function() {
+            if (document.cookie.split(';').some((item) => item.trim().startsWith('darkMode='))) {
+                document.getElementById("topnav").style.backgroundColor = "#333"
+                let content = document.getElementById("DarkModetext");
+                document.body.classList.add('dark-mode');
+                content.innerText = "Light";
+                document.getElementById("topnav").style.backgroundColor = "#333";
+                var elements = document.querySelectorAll("#topnav_a");
+
+                for (var i = 0; i < elements.length; i++) {
+                elements[i].style.color = "#f2f2f2";
+                }
+
+                var elements = document.querySelectorAll("#container");
+
+                for (var i = 0; i < elements.length; i++) {
+                elements[i].style.backgroundColor = "#161b22";
+                }
+
+                content.style.backgroundColor = "#333"
+
+                content.innerText = "Light";
+                content.style.background = "url('./dark.png') no-repeat center center";
+            }
+            }
+            
+            function toggleMode() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+            let content = document.getElementById("DarkModetext");
+            if (content.innerText == "Dark") {
+                document.getElementById("topnav").style.backgroundColor = "#333";
+                var elements = document.querySelectorAll("#topnav_a");
+
+                for (var i = 0; i < elements.length; i++) {
+                elements[i].style.color = "#f2f2f2";
+                }
+
+                var elements = document.querySelectorAll("#container");
+
+                for (var i = 0; i < elements.length; i++) {
+                elements[i].style.backgroundColor = "#161b22";
+                }
+
+                content.style.backgroundColor = "#333"
+
+                content.innerText = "Light";
+                content.style.background = "url('./dark.png') no-repeat center center";
+                document.cookie = "darkMode=1; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+            } else {
+                document.getElementById("topnav").style.backgroundColor = "#e2e2e2";
+                var elements = document.querySelectorAll("#topnav_a");
+
+                for (var i = 0; i < elements.length; i++) {
+                elements[i].style.color = "black";
+                }
+
+                var elements = document.querySelectorAll("#container");
+
+                for (var i = 0; i < elements.length; i++) {
+                elements[i].style.backgroundColor = "#faf8f8";
+                }
+
+                content.style.backgroundColor = "#e2e2e2"
+
+                content.innerText = "Dark";
+                content.style.background = "url('./light.png') no-repeat center center";
+                document.cookie = "darkMode=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+            }
+        }
+        </script>
+    </body>
+</html>
