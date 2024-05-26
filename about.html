@@ -26,5 +26,14 @@
         </div>
 
         <script src="script.js"></script>
+        <script>
+            window.onload = function() {
+                if (document.cookie.split(';').some((item) => item.trim().startsWith('darkMode='))) {
+                    let content = document.getElementById("DarkModetext");
+                    content.innerText = "Dark";
+                    toggleMode();
+                }
+            }
+        </script>
     </body>
 </html>
