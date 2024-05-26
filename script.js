@@ -77,34 +77,8 @@ function toggleMode() {
 
 window.onload = function() {
     if (document.cookie.split(';').some((item) => item.trim().startsWith('darkMode='))) {
-        document.getElementById("topnav").style.backgroundColor = "#333";
-        var elements = document.querySelectorAll("#topnav_a");
-
-        for (var i = 0; i < elements.length; i++) {
-        elements[i].style.color = "#f2f2f2";
-        }
-
-        document.getElementById("topnav").style.backgroundColor = "#333";
-
-        var links = document.querySelectorAll('.topnav a');
-        links.forEach(function(link) {
-            if (!link.classList.contains('active')) {
-                link.addEventListener("mouseover", function() {
-                    link.style.backgroundColor = "#4b4b4b";
-                });
-
-                link.addEventListener("mouseout", function() {
-                    link.style.backgroundColor = "";
-                });
-            }
-        });
-
-        var elements = document.querySelectorAll("#container");
-
-        for (var i = 0; i < elements.length; i++) {
-        elements[i].style.backgroundColor = "#161b22";
-        }
-
-        content.style.backgroundColor = "#333"
+        let content = document.getElementById("DarkModetext");
+        content.innerText = "Dark";
+        toggleMode();
     }
 }
