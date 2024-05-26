@@ -74,11 +74,3 @@ function toggleMode() {
         document.cookie = "darkMode=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
     }
 }
-
-window.onload = function() {
-    if (document.cookie.split(';').some((item) => item.trim().startsWith('darkMode='))) {
-        let content = document.getElementById("DarkModetext");
-        content.innerText = "Dark";
-        toggleMode();
-    }
-}
