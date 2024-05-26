@@ -1,0 +1,129 @@
+* {
+    font-family: Arial;
+}
+
+p {
+    font-size: large;
+}
+
+.center {
+    text-align: center;
+}
+
+#container {
+    background-color: #faf8f8;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 10px;
+    border: 2px solid gray;
+    border-radius: 8px;
+}
+
+.center {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 20px;
+}
+
+li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.description {
+    margin-top: 5px;
+    font-style: italic;
+    color: #555;
+}
+
+.button{
+    padding: 13px 30px;
+    font-size: large;
+    border: none;
+    background-color: #a8a8a8;
+    background: url("./light.png") no-repeat;
+    background-position: center center;
+    color:rgba(0,0,0,0);
+}
+
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: green;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: rgb(228, 76, 32);
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.indent {
+    padding-left: 15px;
+}
+
+.dark-mode {
+    background-color: rgb(19, 20, 23);
+    color: white;
+}
+
+.topright {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 18px;
+}
+
+.top{
+    position: absolute;
+    top: 8;
+}
+
+.topnav {
+    background-color: #f1eeee; 
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.topnav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 10px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #04AA6D;
+    color: black;
+}
+
+.topnav a.all {
+    color: black;
+}
