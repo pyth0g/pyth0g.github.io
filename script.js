@@ -11,6 +11,19 @@ window.onload = function() {
         elements[i].style.color = "#f2f2f2";
         }
 
+        var links = document.querySelectorAll('.topnav a');
+        links.forEach(function(link) {
+            if (!link.classList.contains('active')) {
+                link.addEventListener("mouseover", function() {
+                    link.style.backgroundColor = "#4b4b4b";
+                });
+
+                link.addEventListener("mouseout", function() {
+                    link.style.backgroundColor = "";
+                });
+            }
+        });
+
         var elements = document.querySelectorAll("#container");
 
         for (var i = 0; i < elements.length; i++) {
