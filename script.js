@@ -78,7 +78,7 @@ function toggleMode() {
 window.onload = function() {
     if (document.cookie.split(';').some((item) => item.trim().startsWith('darkMode='))) {
         let content = document.getElementById("DarkModetext");
-        content.innerText = "Dark";
+        content.innerText = "Light";
         toggleMode();
     }
 }
