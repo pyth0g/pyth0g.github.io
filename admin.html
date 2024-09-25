@@ -29,20 +29,17 @@
             event.preventDefault();
             
             submittedHash = await hashPassword(document.getElementById("password").value);
-            console.log(submittedHash)
             
             message = document.getElementById("message");
-            localStorage.setItem("isAuth", "false")
-            console.log(submittedHash);
-            console.log(hash);
+            document.cookie = "isAuth=0; path=/";
             if (submittedHash === hash) {
-                console.log("success")
-                localStorage.setItem("isAuth", 1);
-                console.log("A: " + localStorage.getItem("isAuth"));
-                // window.location.href = "admin-page.html";
+                document.cookie = "isAuth=1; path=/";
+                window.location.href = "admin-page.html";
+                message.textContent = "";
 
             } else {
-                message.textContent = "Invalid password";
+                document.cookie = "isAuth=0; path=/";
+                message.textContent = "Incorrect password";
             }
         });
     </script>

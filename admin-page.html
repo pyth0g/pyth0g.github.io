@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <script>
-        console.log(localStorage.getItem('isAuth'))
-        if (localStorage.getItem('isAuth') !== 'true') {
-            console.log("failed!")
-            window.location.href = 'admin.html'; 
+        if (document.cookie.split("isAuth=")[1][0] !== "1") {
+            window.location.href = 'admin.html';
         }
     </script>
 </head>
