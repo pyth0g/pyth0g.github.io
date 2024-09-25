@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+
+<body>
+    <form id="login">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+        <input type="submit" value="Login">
+    </form>
+
+    <p id="message" style="color: red;"></p>
+    <script>
+        hash = "d49cf7fc88dfb440638ea6e74ed8c528468ac73ba661ce612fe39e9cd701bfc1";
+
+        async function hashPassword(password) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(password);
+            const hash = await crypto.subtle.digest("SHA-256", data);
+            return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, "0")).join("");
+        }
+
+        document.getElementById("login").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            
+            submittedHash = await hashPassword(document.getElementById("password").value);
+            console.log(submittedHash)
+            
+            message = document.getElementById("message");
+            localStorage.setItem("isAuth", "false")
+            console.log(submittedHash);
+            console.log(hash);
+            if (submittedHash === hash) {
+                console.log("success")
+                localStorage.setItem("isAuth", 1);
+                console.log("A: " + localStorage.getItem("isAuth"));
+                // window.location.href = "admin-page.html";
+
+            } else {
+                message.textContent = "Invalid password";
+            }
+        });
+    </script>
+
+</body>
