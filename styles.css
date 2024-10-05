@@ -63,6 +63,7 @@ a:link {
     color: green;
     background-color: transparent;
     text-decoration: underline;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 a:visited {
@@ -75,6 +76,11 @@ a:hover {
     color: rgb(228, 76, 32);
     background-color: transparent;
     text-decoration: underline;
+    transform: scale(1.05);
+}
+
+a:active {
+    background-color: #388E3C;
 }
 
 .indent {
@@ -112,11 +118,13 @@ a:hover {
     text-decoration: none;
     font-size: 17px;
     border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .topnav a:hover {
     background-color: #ddd;
     color: black;
+    transform: scale(1.05);
 }
 
 .topnav a.active {
