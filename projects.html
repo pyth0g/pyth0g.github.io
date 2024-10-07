@@ -13,6 +13,7 @@
             <a class="all" href="index.html"><text id="topnav_a">Home</text></a>
             <a class="all" href="about.html"><text id="topnav_a">About me</text></a>
             <a class="active" href="projects.html"><text id="topnav_a">Projects</text></a>
+            <a class="all" href="https://raspi.kladnik.cc" target="_blank"><text id="topnav_a">Raspberry Pi</text></a>
         </div>
 
         <h1>Projects</h1>
@@ -72,7 +73,7 @@
             window.onload = function() {
                 if (document.cookie.split(';').some((item) => item.trim().startsWith('darkMode='))) {
                     let content = document.getElementById("DarkModetext");
-                    content.innerText = "Dark";
+                    content.innerText = "Light";
                     toggleMode();
                 }
             }
