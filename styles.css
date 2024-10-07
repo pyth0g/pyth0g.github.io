@@ -103,19 +103,20 @@ a {
     font-size: 17px;
     border-radius: 10px;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    color: #f2f2f2;
 }
 
 .topnav a:hover {
     background-color: #5a5a5a;
-    color: black;
+    color: #f2f2f2;
     transform: scale(1.05);
 }
 
 .topnav a.active {
     background-color: #04AA6D;
-    color: black;
+    color: #f2f2f2;
 }
 
 .topnav a.all {
-    color: black;
+    color: #f2f2f2;
 }
