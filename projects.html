@@ -65,9 +65,18 @@
         </div>
 
         <div class="topright">
-            <button id="DarkModetext" onclick="toggleMode()" class="button">Dark</button>
+            <button id="DarkModetext" onclick="toggleMode()" class="button">Light</button>
         </div>
 
         <script src="script.js"></script>
+        <script>
+            window.onload = function() {
+                if (document.cookie.split(';').some((item) => item.trim().startsWith('darkMode='))) {
+                    let content = document.getElementById("DarkModetext");
+                    content.innerText = "Light";
+                    toggleMode();
+                }
+            }
+        </script>
     </body>
 </html>
