@@ -58,16 +58,6 @@ a {
     color: #555;
 }
 
-.button{
-    padding: 13px 30px;
-    font-size: large;
-    border: none;
-    background-color: #333;
-    background: url("./dark.png") no-repeat;
-    background-position: center center;
-    color:rgba(0,0,0,0);
-}
-
 .indent {
     padding-left: 15px;
 }
