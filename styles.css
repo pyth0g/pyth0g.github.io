@@ -14,6 +14,33 @@ p {
     text-align: center;
 }
 
+.button-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.button{
+    font-size: 1.5em;
+    padding: 10px 20px;
+    background-color: #04AA6D;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    background-color: #048b5a;
+    transform: scale(1.05);
+}
+
+.button:active {
+    background-color: #04AA6D;
+}
+
 #container {
     background-color: #161b22;
     max-width: 800px;
